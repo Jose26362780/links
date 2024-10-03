@@ -5,6 +5,8 @@ import { styles } from "./styles"
 import { colors } from "@/styles/colors"
 
 
+import { Category } from "@/components/category"
+
 export default function Index() {
   return (
     <View style={styles.container}>
@@ -15,6 +17,8 @@ export default function Index() {
           <MaterialIcons name="add" size={32} color={colors.green[300]} />
         </TouchableOpacity>
       </View>
+
+      <Category/>
     </View>
   )
 }
