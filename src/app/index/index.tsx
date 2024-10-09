@@ -4,6 +4,7 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  Linking,
   Modal,
   Text,
   Alert,
@@ -59,7 +60,16 @@ export default function Index() {
         { style: "cancel", text: "Não"},
         { text:"Sim", onPress: linkRemove},
       ])
-    
+  }
+
+  async function handleOpen(){
+    try {
+      await Linking.openURL(link.url)
+      setShowModal(false)
+    } catch (error) {
+      Alert.alert("Link", "Não foi possivel abrir o link")
+      
+    }
   }
 
   useFocusEffect(
@@ -115,8 +125,13 @@ export default function Index() {
             <Text style={styles.modalUrl}>{link.url}</Text>
 
             <View style={styles.modalFooter}>
-              <Option name="Excluir" icon="delete" variant="secondary" onPress={handleRemove} />
-              <Option name="Abrir" icon="language" />
+              <Option
+                name="Excluir"
+                icon="delete"
+                variant="secondary"
+                onPress={handleRemove}
+              />
+              <Option name="Abrir" icon="language" onPress={handleOpen} />
             </View>
           </View>
         </View>
