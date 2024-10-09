@@ -34,8 +34,12 @@ export default function Add() {
         id: new Date().getTime().toString(),
         name,
         url,
-        category
+        category,
       })
+
+      Alert.alert("Sucesso", "Novo Link Adicionado", [
+        { text: "Ok", onPress: () => router.back()}
+      ])
 
     } catch (error){
       Alert.alert("Erro", "Não possivel salvar o link")
