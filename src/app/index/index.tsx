@@ -1,7 +1,15 @@
-import { useState, useEffect } from "react"
-import { View, Image, TouchableOpacity, FlatList, Modal,Text, Alert } from "react-native"
+import { useState, useCallback } from "react"
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  Modal,
+  Text,
+  Alert,
+} from "react-native"
 import { MaterialIcons } from "@expo/vector-icons"
-import { router } from "expo-router"
+import { router, useFocusEffect } from "expo-router"
 
 import { styles } from "./styles"
 import { colors } from "@/styles/colors"
@@ -12,26 +20,24 @@ import { Link } from "@/components/link"
 import { Option } from "@/components/option"
 import { Categories } from "@/components/categories"
 
-
-
-
-
 export default function Index() {
   const [links, setLinks] = useState<LinkStorage[]>([])
-  const[category, setCategory] = useState(categories[0].name)
+  const [category, setCategory] = useState(categories[0].name)
 
   async function getLinks() {
-    try{
+    try {
       const response = await linkStorage.get()
       setLinks(response)
-    } catch (error){
-      Alert.alert("Erro"," Não foi possivel listar os links ")
+    } catch (error) {
+      Alert.alert("Erro", " Não foi possivel listar os links ")
     }
   }
-  
-  useEffect(()=> {
-    getLinks()
-  },[category],)
+
+  useFocusEffect(
+    useCallback(() => {
+      getLinks()
+    }, [])
+  )
 
   return (
     <View style={styles.container}>
@@ -43,7 +49,7 @@ export default function Index() {
         </TouchableOpacity>
       </View>
 
-      <Categories onChange={setCategory} selected={category}/>
+      <Categories onChange={setCategory} selected={category} />
 
       <FlatList
         data={links}
@@ -80,7 +86,7 @@ export default function Index() {
 
             <View style={styles.modalFooter}>
               <Option name="Excluir" icon="delete" variant="secondary" />
-              <Option name="Abrir" icon="language"/>
+              <Option name="Abrir" icon="language" />
             </View>
           </View>
         </View>
@@ -88,5 +94,3 @@ export default function Index() {
     </View>
   )
 }
-
-
