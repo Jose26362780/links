@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import { View, Text, TouchableOpacity } from "react-native"
 import { MaterialIcons } from "@expo/vector-icons"
@@ -12,13 +11,13 @@ import { Button } from "@/components/button"
 import { Categories } from "@/components/categories"
 
 export default function Add() {
-  const [name, setName ] = useState("")
+  const [category, setCategory] = useState("")
+  const [name, setName] = useState("")
   const [url, setUrl] = useState("")
 
-  function handleAdd(){
-
+  function handleAdd() {
+    console.log({ name, url })
   }
-
 
   return (
     <View style={styles.container}>
@@ -31,7 +30,7 @@ export default function Add() {
       </View>
 
       <Text style={styles.label}> Selecione uma categoria</Text>
-      <Categories />
+      <Categories onChange={setCategory} selected={category} />
 
       <View style={styles.form}>
         <Input placeholder="Nome" onChangeText={setName} autoCorrect={false} />
