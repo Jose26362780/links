@@ -33,7 +33,7 @@ Este Aplicativo foi desenvolvido dentro do mini curso de react native dentro da 
 
 
 ## 💻 Sobre mim 😄
- Entusiasta da programação e estudante de Engenharia de Software com foco em        desenvolvimento front-end rumo ao full stack. Dedicado a criar experiências digitais inovadoras que impactam o mundo através da tecnologia.
+ Entusiasta da programação e estudante de Engenharia de Software com foco em desenvolvimento front-end rumo ao full stack. Dedicado a criar experiências digitais inovadoras que impactam o mundo através da tecnologia.
 
 ## 🔗 Contato 
 
