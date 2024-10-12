@@ -12,7 +12,7 @@ Este Aplicativo foi desenvolvido dentro do mini curso de react native dentro da 
  - Estilização com StyleSheet.
 
 
-![preview](.github/cover.png)
+
 
 ##  Tecnologias usadas no projeto
 
@@ -20,9 +20,7 @@ Este Aplicativo foi desenvolvido dentro do mini curso de react native dentro da 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![React_Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-## Link da aplicação
 
-👉🏼[Clique aqui para accessar](https://convert-template.netlify.app/)
 
 
 
